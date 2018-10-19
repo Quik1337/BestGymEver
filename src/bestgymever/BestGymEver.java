@@ -10,16 +10,18 @@ public class BestGymEver
     {
         Customer customer = new Customer();
         
-        ReadFromFile readFromFile = new ReadFromFile();
+        ReadFromFile rff = new ReadFromFile();
         
-        RegisterMemberPresence RMP = new RegisterMemberPresence();
+        RegisterMemberPresence rmp = new RegisterMemberPresence();
+        
+        String s = "";
         
         boolean flag = false;
         while(!flag)
         {
             try
             {
-                String s = JOptionPane.showInputDialog(
+                s = JOptionPane.showInputDialog(
                     "[1] Check if customer is a member \n" +
                     "[2] Register customer presence    \n" +
                     "[3] Exit program");
@@ -45,7 +47,7 @@ public class BestGymEver
                         s = JOptionPane.showInputDialog(
                             "Register with: Name or IdNum");
 
-                        s = RMP.registerPresence(s);
+                        s = rmp.registerPresence(s);
                         
                         JOptionPane.showMessageDialog(null, s);
 
